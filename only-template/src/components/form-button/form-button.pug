@@ -1,0 +1,6 @@
+mixin form-button(props)
+    button(
+        class= props.disabled && 'form-button--disabled'
+        disabled= props.disabled
+    ).form-button&attributes(attributes)
+        .form-button__text= props.text

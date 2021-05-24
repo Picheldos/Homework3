@@ -1,0 +1,32 @@
+.form {
+    $root: &;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+
+    border-radius: 6px;
+
+    padding: 5px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    input{
+        width: 300px;
+        border: 1px solid #9A9A9A;
+        margin: 10px;
+    }
+
+    &__response {
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    &__errors-item {
+        color: red;
+    }
+
+    &__success-item {
+        color: green;
+    }
+
+}
