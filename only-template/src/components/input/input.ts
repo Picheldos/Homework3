@@ -23,7 +23,21 @@ export default class Input extends Component.Default {
         this.value = this.input.value;
         this.type = this.input.type;
         this.required = this.input.hasAttribute('data-required');
-        this.type == 'email' ? this.regex = /\S+@\S+\.\S+/ : this.regex = /\S.*/;
+
+        switch (this.name) {
+            case 'email':
+                this.regex = /\S+@\S+\.\S+/
+                break
+            case 'name':
+                this.regex = /\S.*/
+                break
+            case 'phone':
+                this.regex = /\S.*/
+                break
+            default:
+                this.regex = null;
+                break
+        }
 
         this.error = this.getElement('error');
 
