@@ -20,8 +20,9 @@ export default class Form extends Component.Default {
     }
 
     getList = () => {
-        // @ts-ignore
-        axios.get('http://dev.studio-mind.ru/api/form', {nameId: 'picheldos'})
+        axios.get('http://dev.studio-mind.ru/api/form', {
+            params: {nameId: 'picheldos'}
+        })
             .then(result => console.log(result.data.list))
             .catch(error => console.log(error))
     }
