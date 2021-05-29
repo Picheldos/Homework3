@@ -35,7 +35,7 @@ export default class Input extends Component.Default {
                 this.regex = /\S.*/
                 break
             default:
-                this.regex = null;
+                this.regex = /\S*/;
                 break
         }
 
