@@ -60,13 +60,17 @@ export default class Form extends Component.Default {
             div.className = `${this.nRootName}__success-item`;
             div.innerHTML = 'Данные успешно отправлены!';
 
-            this.response.appendChild(div);
+            if (!this.response.lastChild){
+                this.response.appendChild(div);
+            }
         } catch (e) {
             const div = document.createElement('div')
             div.className = `${this.nRootName}__errors-item`;
             div.innerHTML = e.message;
 
-            this.response.appendChild(div);
+            if (!this.response.lastChild){
+                this.response.appendChild(div);
+            }
         }
     }
 
