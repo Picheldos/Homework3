@@ -54,13 +54,12 @@ export default class Form extends Component.Default {
         };
 
         try {
-            await axios.post('http://dev.studio-mind.ru/api/form', obj);
+            if (!this.response.lastChild) {
+                await axios.post('http://dev.studio-mind.ru/api/form', obj);
 
-            const div = document.createElement('div')
-            div.className = `${this.nRootName}__success-item`;
-            div.innerHTML = 'Данные успешно отправлены!';
-
-            if (!this.response.lastChild){
+                const div = document.createElement('div')
+                div.className = `${this.nRootName}__success-item`;
+                div.innerHTML = 'Данные успешно отправлены!';
                 this.response.appendChild(div);
             }
         } catch (e) {
